@@ -2,7 +2,7 @@ Local Pipeline Latency Benchmark
 Evaluation cases: 10
 Repeats per case: 5
 Total measured runs: 50
-Average latency: 0.057 ms
-Approximate p95 latency: 0.105 ms
+Average latency: 0.050 ms
+Approximate p95 latency: 0.079 ms
 Scope: local retrieval and fallback processing only.
 Excludes Jev model execution and network latency.
