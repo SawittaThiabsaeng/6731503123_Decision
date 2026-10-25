@@ -1,0 +1,15 @@
+﻿A7 Baseline Evaluation
+
+Evaluation cases: E01-E10
+Correct actions: 9/10
+Action agreement: 90.0%
+Failed case: E10
+Expected action: SEND_TO_HUMAN
+Actual action: ROUTE_TO_SUPPORT
+
+Improvement applied afterward:
+Added a rule to detect password reset or recovery pages that fail to load.
+
+Note:
+This baseline summary is transcribed from the earlier recorded terminal output.
+It is not a fresh rerun of the original code.

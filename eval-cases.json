@@ -1,0 +1,94 @@
+
+{
+  "evaluation_cases": [
+    {
+      "id": "E01",
+      "type": "normal",
+      "input": "I forgot my password and cannot log in.",
+      "expected_decision": "ACCOUNT_ISSUE",
+      "expected_action": "ROUTE_TO_SUPPORT",
+      "reason": "The user clearly describes a password and login problem."
+    },
+    {
+      "id": "E02",
+      "type": "normal",
+      "input": "The website shows a 500 Internal Server Error.",
+      "expected_decision": "TECHNICAL_ISSUE",
+      "expected_action": "ROUTE_TO_SUPPORT",
+      "reason": "The message explicitly reports a server error."
+    },
+    {
+      "id": "E03",
+      "type": "normal",
+      "input": "What are your support opening hours?",
+      "expected_decision": "GENERAL_INQUIRY",
+      "expected_action": "ROUTE_TO_SUPPORT",
+      "reason": "The user asks for general service information."
+    },
+    {
+      "id": "E04",
+      "type": "edge",
+      "input": "I cannot log in.",
+      "expected_decision": "ACCOUNT_ISSUE",
+      "expected_action": "ROUTE_TO_SUPPORT",
+      "reason": "The message is short but identifies a specific account problem."
+    },
+    {
+      "id": "E05",
+      "type": "edge",
+      "input": "The app crashes when I open it.",
+      "expected_decision": "TECHNICAL_ISSUE",
+      "expected_action": "ROUTE_TO_SUPPORT",
+      "reason": "The message describes an application failure."
+    },
+    {
+      "id": "E06",
+      "type": "edge",
+      "input": "Can you tell me what services are available?",
+      "expected_decision": "GENERAL_INQUIRY",
+      "expected_action": "ROUTE_TO_SUPPORT",
+      "reason": "The user requests general information about services."
+    },
+    {
+      "id": "E07",
+      "type": "fallback",
+      "input": "It does not work. Please help.",
+      "expected_decision": null,
+      "simulated_ai_result": {
+        "decision": "TECHNICAL_ISSUE"
+      },
+      "expected_action": "ASK_FOR_MORE_INFORMATION",
+      "reason": "The message does not explain what is failing."
+    },
+    {
+      "id": "E08",
+      "type": "fallback",
+      "input": "",
+      "expected_decision": null,
+      "expected_action": "ASK_FOR_MORE_INFORMATION",
+      "reason": "The user message is empty."
+    },
+    {
+      "id": "E09",
+      "type": "difficult_ambiguous",
+      "input": "I cannot access my account, and the website keeps showing an error.",
+      "expected_decision": null,
+      "simulated_ai_result": {
+        "decision": "ACCOUNT_ISSUE"
+      },
+      "expected_action": "SEND_TO_HUMAN",
+      "reason": "The message may involve both account access and a technical problem."
+    },
+    {
+      "id": "E10",
+      "type": "difficult_ambiguous",
+      "input": "My password reset page is not loading.",
+      "expected_decision": null,
+      "simulated_ai_result": {
+        "decision": "ACCOUNT_ISSUE"
+      },
+      "expected_action": "SEND_TO_HUMAN",
+      "reason": "The message could indicate an account recovery issue or a technical issue."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+
+{
+  "knowledge_records": [
+    {
+      "id": "KB01",
+      "category": "ACCOUNT_ISSUE",
+      "keywords": ["account", "login", "log in", "password"],
+      "description": "The user cannot access an account, log in, or use a password.",
+      "recommended_action": "Check account access and password recovery options."
+    },
+    {
+      "id": "KB02",
+      "category": "ACCOUNT_ISSUE",
+      "keywords": ["reset password", "forgot password", "locked account"],
+      "description": "The user needs password recovery or help with a locked account.",
+      "recommended_action": "Guide the user through the account recovery process."
+    },
+    {
+      "id": "KB03",
+      "category": "TECHNICAL_ISSUE",
+      "keywords": ["server error", "500 error", "website error"],
+      "description": "The user reports a website or server error.",
+      "recommended_action": "Collect error details and route the request to technical support."
+    },
+    {
+      "id": "KB04",
+      "category": "TECHNICAL_ISSUE",
+      "keywords": ["crash", "bug", "not loading"],
+      "description": "The application crashes, has a bug, or fails to load.",
+      "recommended_action": "Ask for reproduction steps and relevant error details."
+    },
+    {
+      "id": "KB05",
+      "category": "GENERAL_INQUIRY",
+      "keywords": ["opening hours", "business hours", "working hours"],
+      "description": "The user asks about support availability or operating hours.",
+      "recommended_action": "Provide the verified support schedule."
+    },
+    {
+      "id": "KB06",
+      "category": "GENERAL_INQUIRY",
+      "keywords": ["available services", "general question", "information"],
+      "description": "The user requests general information about the service.",
+      "recommended_action": "Provide relevant information or direct the user to the appropriate support channel."
+    }
+  ]
+}
