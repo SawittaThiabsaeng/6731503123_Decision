@@ -1,53 +1,93 @@
-﻿# Support Request Classifier — A7
+﻿# Support Request Classifier
 
-Student ID: 6731503123
+**Student Name:** Sawitta Thiabsaeng  
+**Student ID:** 6731503123  
+**Course:** Platform Development
 
 ## Project Overview
-This project classifies customer support messages into:
-- ACCOUNT_ISSUE
-- TECHNICAL_ISSUE
-- GENERAL_INQUIRY
 
-A deterministic fallback mechanism handles unclear input,
-invalid AI results, model errors, and potentially mixed issues.
+The Support Request Classifier is an AI decision capability that categorizes customer support messages into three categories:
 
-## Grounding Context
-The knowledge base is stored in `knowledge_base.json`.
-`retrieve_context.py` retrieves relevant records using keyword matching.
-A manual Jev Playground experiment compared the same message with
-and without additional context. The predicted category remained
-TECHNICAL_ISSUE, while the displayed probabilities changed.
+- `ACCOUNT_ISSUE` — Account and login problems
+- `TECHNICAL_ISSUE` — Website and application problems
+- `GENERAL_INQUIRY` — General questions and service information
 
-## Evaluation Dataset
-`eval-cases.json` contains 10 cases:
-- 3 normal
-- 3 edge
-- 2 fallback
-- 2 difficult or ambiguous
+The project combines an AI decision capability with deterministic Python fallback rules to handle unclear messages, invalid model outputs, model errors, and potentially ambiguous requests.
+
+## Assignment A6: Build and Integrate an AI Decision Capability
+
+A6 focuses on implementing the initial AI decision capability and designing a validation and fallback mechanism.
+
+Key components:
+
+- Jev Playground experiments for support request classification
+- Python fallback validation
+- Handling of vague, invalid, and ambiguous requests
+- Proposed integration architecture and downstream actions
+- Test cases and evidence of fallback behavior
+
+**Report:** `A6_6731503123.pdf`
+
+**Main files:**
+- `fallback.py`
+- `test_fallback.py`
+
+Note: Jev Playground and the local Python fallback were tested separately. A live API integration between them has not been implemented.
+
+## Assignment A7: Evaluate and Improve AI Capability
+
+A7 evaluates the existing capability and improves one part of the fallback logic.
+
+Key components:
+
+- Grounding context and keyword-based knowledge retrieval
+- A 10-case evaluation dataset
+- Baseline and post-improvement benchmarks
+- Additional targeted tests for password-recovery page failures
+- Engineering reflection and limitations
+
+**Report:** `A7_6731503123.pdf`
+
+**Main files:**
+- `knowledge_base.json`
+- `retrieve_context.py`
+- `eval-cases.json`
+- `evaluate.py`
+- `benchmark.py`
+- `fallback_before.py`
+- `fallback_after.py`
+- `test_a7_targeted.py`
+
+The updated fallback recognizes additional phrases, including `is broken`, `does not work`, and `doesn't work`, when identifying password-recovery page failures.
+
+The three targeted tests T09–T11 passed. The original 10-case evaluation achieved 100% local action agreement. This result measures agreement with the expected local actions, not actual AI model accuracy.
 
 ## How to Run
+
 Run these commands from the project directory:
-- `python .\test_fallback.py`
-- `python .\test_a7_targeted.py`
-- `python .\evaluate.py`
-- `python .\benchmark.py`
 
-## Improvement
-The updated fallback logic recognizes additional descriptions of
-a broken password recovery page, including:
-- is broken
-- does not work
-- doesn't work
-
-The targeted tests T09-T11 passed. The original 10-case evaluation
-also passed with 100% local action agreement.
-
-## Limitations
-Local evaluation measures action agreement in the local pipeline,
-not actual AI model accuracy. The benchmark excludes Jev inference
-and network latency. The manual grounding experiment used only one
-message per condition and cannot establish improved accuracy.
+```powershell
+python .\test_fallback.py
+python .\test_a7_targeted.py
+python .\evaluate.py
+python .\benchmark.py
+```
 
 ## Evidence
-The `evidence` folder contains evaluation outputs, benchmark results,
-targeted tests, and Jev Playground screenshots.
+
+The `evidence/` directory contains test outputs, benchmark results, retrieval evidence, and screenshots from the Jev Playground grounding experiment.
+
+## Limitations
+
+- The knowledge retrieval method uses keyword matching.
+- The Jev Playground model is not automatically integrated with the local Python fallback.
+- The benchmark excludes model inference and network latency.
+- The grounding experiment used one message per condition and does not establish improved classification accuracy.
+- Further testing with a larger dataset is needed before production deployment.
+
+## Submission Files
+
+- `A6_6731503123.pdf`
+- `A7_6731503123.pdf`
+- Python source code, evaluation dataset, knowledge base, and supporting evidence
+>>>>>>> Stashed changes
