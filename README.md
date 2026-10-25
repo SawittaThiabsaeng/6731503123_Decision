@@ -90,4 +90,3 @@ The `evidence/` directory contains test outputs, benchmark results, retrieval ev
 - `A6_6731503123.pdf`
 - `A7_6731503123.pdf`
 - Python source code, evaluation dataset, knowledge base, and supporting evidence
->>>>>>> Stashed changes
