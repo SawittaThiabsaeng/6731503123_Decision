@@ -78,8 +78,11 @@ def handle_decision(user_message, ai_result, model_error=None):
         and any(phrase in message for phrase in [
             "not loading",
             "does not load",
-            "doesn't load"
-        ])
+            "doesn't load",
+            "is broken",
+            "does not work",
+            "doesn't work"
+])
     )
 
     if (

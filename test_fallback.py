@@ -26,6 +26,12 @@ tests = [
         "ai_result": {"decision": "ACCOUNT_ISSUE"},
         "expected": "SEND_TO_HUMAN",
     },
+    {
+    "id": "T09",
+    "message": "The password reset page is broken.",
+    "ai_result": {"decision": "ACCOUNT_ISSUE"},
+    "expected": "SEND_TO_HUMAN",
+},
 ]
 
 for test in tests:
