@@ -69,23 +69,8 @@ def handle_decision(user_message, ai_result, model_error=None):
         "not loading", "crash", "bug"
     ])
 
-    # Detect password recovery pages that fail to load
-    account_recovery_page_failing = (
-        any(phrase in message for phrase in [
-            "password reset page",
-            "password recovery page"
-        ])
-        and any(phrase in message for phrase in [
-            "not loading",
-            "does not load",
-            "doesn't load"
-        ])
-    )
+    if has_account_issue and has_technical_issue:
 
-    if (
-        (has_account_issue and has_technical_issue)
-        or account_recovery_page_failing
-    ):
         return {
             "status": "REVIEW",
             "reason": "Multiple possible issue categories",
